@@ -198,7 +198,7 @@ public class SubmitController {
 
     @ApiOperation(value = "提交ZoomOut任务")
     @PostMapping("/zoom-out")
-    public SubmitResultVO blend(@RequestBody SubmitZoomOutDTO zoomOutDTO) {
+    public SubmitResultVO zoomOut(@RequestBody SubmitZoomOutDTO zoomOutDTO) {
         Double magnification = zoomOutDTO.getMagnification();
         if (magnification != 1.5D && magnification != 2.0D) {
             return SubmitResultVO.fail(ReturnCode.VALIDATION_ERROR, "缩小倍数参数错误");
